@@ -26,6 +26,7 @@ public abstract class BaseNodeProcessingContextPipelineComponent extends BaseCon
             if (null == currentNode) {
                 pathToRoot.remove(pathToRoot.size() - 1);
             } else {
+                currentNode.setLanguage(instance.getLanguage());
                 processNode(currentNode, pathToRoot);
 
                 List<IBaseNode> children = currentNode.getChildren();

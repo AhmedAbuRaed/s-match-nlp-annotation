@@ -120,7 +120,7 @@ public class NLPXMLContextLoader extends BaseXMLContextLoader<INLPContext, INLPN
                         token.setSenses(new ArrayList<ISense>());
                     }
                     try {
-                        token.getSenses().add(oracle.createSense(atts.getValue("id")));
+                        token.getSenses().add(oracle.createSense(atts.getValue("id"), "en"));
                     } catch (LinguisticOracleException e) {
                         throw new RuntimeException(e.getMessage(), e);
                     }

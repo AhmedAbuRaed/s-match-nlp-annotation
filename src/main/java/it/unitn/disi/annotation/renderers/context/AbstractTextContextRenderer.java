@@ -36,6 +36,7 @@ public abstract class AbstractTextContextRenderer extends BaseFileContextRendere
 
     @Override
     protected void process(INLPContext context, BufferedWriter out) throws IOException, ContextRendererException {
+        context.getRoot().setLanguage(context.getLanguage());
         processNode(context.getRoot(), out);
     }
 
@@ -52,6 +53,8 @@ public abstract class AbstractTextContextRenderer extends BaseFileContextRendere
         }
         Iterator<INLPNode> i = curNode.childrenIterator();
         while (i.hasNext()) {
+            INLPNode node = i.next();
+            node.setLanguage(context.getLanguage());
             processNode(i.next(), out);
         }
     }

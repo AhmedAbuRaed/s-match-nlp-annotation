@@ -47,6 +47,7 @@ public class PipelineContextPipelineComponent extends BaseContextPipelineCompone
                     pathToRootPhrases.remove(pathToRootPhrases.size() - 1);
                 } else {
                     ILabel currentPhrase;
+                    currentNode.setLanguage(instance.getLanguage());
                     currentPhrase = processNode(currentNode, pathToRootPhrases, progressContainer);
 
                     List<INLPNode> children = currentNode.getChildren();
